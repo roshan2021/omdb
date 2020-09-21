@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-danger">
+      <a class="navbar-brand text-light" href="#" onclick="init()">
+        <span class="material-icons"> movie_filter </span> Movie Search
+      </a>
+      <div class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="username"
+          aria-label="username"
+          onchange="handleUsername(this)" 
+        
+        />
+        <input
+          class="form-control mr-sm-2"
+          type="password"
+          placeholder="password"
+          aria-label="password"
+          onchange="handlePassword(this)"
+        
+        />
+        <button class="btn btn-primary my-2 my-sm-0" type="submit" onclick="handleLogin(userName, password)">
+          Login
+        </button>
+      </div>
+    </nav>
+    <div id="container" class="container">
+      <!-- <div id="search">
+        <div class="row">
+          <div class="col-auto mx-auto mb-5 text-center text-capitalize">
+            search for your favorite movies here
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-8 mx-auto">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="movie search"
+                aria-label="movie search"
+                aria-describedby="button-addon2"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <span class="material-icons"> search </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div id="list">
+        <div class="row">
+          <div class="col-auto mx-auto my-5 text-center text-capitalize">
+            Results for "MOVIE"
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto mx-auto">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="container-fluid p-3 border shadow cursor">
+              <div class="row">
+                <div class="col-auto">
+                  <img
+                    class="img-fluid"
+                    src="https://via.placeholder.com/170x250"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="col">
+                  <h4>Movie Title goes here and year</h4>
+                  year
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="container-fluid p-3 border shadow cursor">
+              <div class="row">
+                <div class="col-auto">
+                  <img
+                    class="img-fluid"
+                    src="https://via.placeholder.com/170x250"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="col">
+                  <h4>Movie Title goes here and year</h4>
+                  year
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div id="details">
+        <div class="container-fluid shadow border my-5 p-3">
+          <div class="row">
+            <div class="col-auto">
+              <img
+                class="img-fluid"
+                src="https://via.placeholder.com/170x250"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-12"><h3>Movie title</h3></div>
+                <div class="col-12 mt-2">
+                  Year
+                  <span class="mx-1 rounded bg-secondary px-1 text-light"
+                    >PG-13</span
+                  ><span class="mx-1 rounded bg-secondary px-1 text-light"
+                    >Time</span
+                  >
+                </div>
+                <div class="col-12 mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatibus ullam voluptas doloremque accusantium
+                  perspiciatis cum illo, similique velit beatae, veritatis sit,
+                  fugit soluta aliquam? Cumque blanditiis sunt quasi vel
+                  consequatur?
+                </div>
+                <div class="col-12 mt-2 cursor">
+                  <span class="material-icons"> bookmark_border </span> Add to
+                  Watch List
+                </div>
+              </div>
+            </div> -->
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
